@@ -23,7 +23,7 @@ public class AdvisorServiceImpl implements AdvisorService {
     private static final Logger LOG = LoggerFactory.getLogger(AdvisorServiceImpl.class);
 
     @Reference
-    public transient CSVService csvService;
+    public transient CSVSerivce  csvService;
 
     public List<Advisor> advisors;
 
@@ -84,12 +84,12 @@ class Advisor {
     }
 }
 
-interface CSVService {
+interface CSVSerivce  {
     <T> List<T> loadData(Class<T> clazz, String filePath, ResourceResolver resourceResolver, boolean skipHeader)
             throws IOException;
 }
 
-class CSVServiceImpl implements CSVService {
+class CSVServiceImpl implements CSVSerivce  {
     @Override
     public <T> List<T> loadData(Class<T> clazz, String filePath, ResourceResolver resourceResolver, boolean skipHeader)
             throws IOException {
