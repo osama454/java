@@ -17,7 +17,7 @@ public class MainTest {
         System.setOut(new PrintStream(outputStream));
 
         // Call the main method
-        Main.main(null);
+        Main.main2(null);
 
         // Verify the output
         assertEquals("Hello, world!\r\n", outputStream.toString());
